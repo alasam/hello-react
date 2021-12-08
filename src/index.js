@@ -3,7 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 const Button = (props) => {
-  // your code here
+  const text = props.text;
+  return (
+    <button className="Button">
+    <span>{text}</span>
+    </button>
+  )
 };
 
 const Application = () => {
@@ -17,7 +22,7 @@ const Application = () => {
 
   return (
     <main>
-      {/* your code here -- this entire line including the curly braces can be removed */}
+      <Button text="reset" />
       <h1>Hello React</h1>
     </main>
   );
