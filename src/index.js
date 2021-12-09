@@ -13,7 +13,7 @@ const Button = (props) => {
 };
 
 const Application = () => {
-  const [name, setName] = useState("Anthony");
+  const [name, setName] = useState("");
   // your code here
 
   const reset = () => {
@@ -23,7 +23,10 @@ const Application = () => {
 
   return (
     <main>
-      <input placeholder="Type your name" />
+      <input 
+      value={name} 
+      onChange={(event) => setName(event.target.value)} 
+      placeholder="Type your name"></input>
       <Button text="reset" reset="reset"/>
       <h1>Hello {name}</h1>
     </main>
