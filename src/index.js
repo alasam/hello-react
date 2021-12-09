@@ -6,7 +6,7 @@ const Button = (props) => {
   const text = props.text;
   const reset = props.reset;
   return (
-    <button onClick = { () => console.log({reset})}>
+    <button onClick = {reset}>
     <span>{text}</span>
     </button>
   )
@@ -14,11 +14,9 @@ const Button = (props) => {
 
 const Application = () => {
   const [name, setName] = useState("");
-  // your code here
 
   const reset = () => {
-    console.log("reset");
-    // your code here
+    setName('');
   };
 
   return (
@@ -27,8 +25,8 @@ const Application = () => {
       value={name} 
       onChange={(event) => setName(event.target.value)} 
       placeholder="Type your name"></input>
-      <Button text="reset" reset="reset"/>
-      <h1>Hello {name}</h1>
+      <Button text="reset" reset={reset}/>
+      {name && <h1>Hello {name}</h1>}
     </main>
   );
 };
